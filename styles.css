@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#game-container {
+    position: relative;
+}
+
+#ball, #left-bar, #right-bar {
+    position: absolute;
+}
+
+#left-bar, #right-bar {
+    width: 20px; /* ajusta el tamaño según tus necesidades */
+    height: 100px; /* ajusta el tamaño según tus necesidades */
+}
+
+#ball {
+    width: 50px; /* ajusta el tamaño según tus necesidades */
+    height: 50px; /* ajusta el tamaño según tus necesidades */
+}
