@@ -77,14 +77,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Función para comenzar el juego
-    function startGame() {
-        if (!gameStarted) {
-            gameStarted = true;
-            playButton.style.display = "none"; // Ocultar el botón de "JUGAR"
-            // Agrega aquí la lógica adicional del juego, como el movimiento de la pelota y las colisiones.
-            setInterval(updateGame, 20); // Actualiza cada 20 milisegundos (ajusta según tus necesidades)
-        }
+function startGame() {
+    if (!gameStarted) {
+        console.log("Juego iniciado");
+        gameStarted = true;
+        playButton.style.display = "none"; // Ocultar el botón de "JUGAR"
+        document.getElementById("title-container").style.display = "none"; // Ocultar el contenedor de la imagen y el texto
+        // Agrega aquí la lógica adicional del juego, como el movimiento de la pelota y las colisiones.
+        setInterval(updateGame, 20); // Actualiza cada 20 milisegundos (ajusta según tus necesidades)
     }
+}
 
     // Evento de clic en el botón de "JUGAR"
     playButton.addEventListener("click", startGame);
