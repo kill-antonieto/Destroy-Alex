@@ -31,6 +31,10 @@ body {
 
 #ball {
   position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url('https://raw.githubusercontent.com/kill-antonieto/pelota/main/images/Screenshot_6.png');
+  background-size: cover;
 }
 
 #left-bar,
@@ -45,11 +49,3 @@ body {
   right: 0;
   background-color: red; /* Puedes cambiar el color según tus preferencias */
 }
-
-#ball {
-  width: 20px;
-  height: 20px;
-  background-image: url('https://github.com/kill-antonieto/pelota/raw/main/images/Screenshot_6.png');
-  background-size: cover;
-}
-
