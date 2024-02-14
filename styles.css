@@ -18,6 +18,16 @@ body {
     height: 100vh;
 }
 
+.message {
+    font-size: 36px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #title-container {
     text-align: center;
 }
