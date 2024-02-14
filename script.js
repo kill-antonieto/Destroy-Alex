@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const leftBarRect = leftBar.getBoundingClientRect();
         const rightBarRect = rightBar.getBoundingClientRect();
 
-        ball.style.left = Math.round(ballRect.left + Math.round(ballSpeedX)) + "px";
-        ball.style.top = Math.round(ballRect.top + Math.round(ballSpeedY)) + "px";
+        ball.style.left = Math.round(ballRect.left + ballSpeedX) + "px";
+        ball.style.top = Math.round(ballRect.top + ballSpeedY) + "px";
 
         if (
             ballRect.left <= 0 ||
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ballRect.bottom >= leftBarRect.top
         ) {
             ballSpeedX = Math.abs(ballSpeedX);
-            ballSpeedY = (Math.random() > 0.5) ? 8 : -8; // Rebote aleatorio
+            ballSpeedY = (Math.random() > 0.5) ? -8 : 8; // Rebote aleatorio en el eje Y
         }
 
         if (
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ballRect.bottom >= rightBarRect.top
         ) {
             ballSpeedX = -Math.abs(ballSpeedX);
-            ballSpeedY = (Math.random() > 0.5) ? 8 : -8; // Rebote aleatorio
+            ballSpeedY = (Math.random() > 0.5) ? -8 : 8; // Rebote aleatorio en el eje Y
         }
     }
 
