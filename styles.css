@@ -1,64 +1,55 @@
 body {
-    margin: 0;
-    overflow: hidden;
-    background-color: black;
-    color: white;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-#game-container {
-    position: relative;
-    text-align: center;
-    width: 100vw;
-    height: 100vh;
-}
-
-#title-container {
-    text-align: center;
-}
-
-#title-image {
-    width: 200px;
-    height: 200px;
-}
-
-#game-title {
-    margin-top: 10px;
+  margin: 0;
+  background-color: black;
+  overflow: hidden;
 }
 
 #play-button {
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-#ball, #left-bar, #right-bar {
-    position: absolute;
+#title-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
-#left-bar, #right-bar {
-    width: 20px;
-    height: 100px;
-    background-color: blue;
-    z-index: 1;
-}
-
-#left-bar {
-    left: 0;
-}
-
-#right-bar {
-    right: 0;
-    background-color: red;
+.message {
+  font-size: 24px; /* Ajusta el tamaño del texto según sea necesario */
+  text-align: center;
 }
 
 #ball {
-    width: 50px;
-    height: 50px;
+  position: absolute;
 }
+
+#left-bar,
+#right-bar {
+  position: absolute;
+  width: 10px;
+  height: 100px;
+  background-color: blue; /* Puedes cambiar el color según tus preferencias */
+}
+
+#right-bar {
+  right: 0;
+  background-color: red; /* Puedes cambiar el color según tus preferencias */
+}
+
+#ball {
+  width: 20px;
+  height: 20px;
+  background-image: url('https://github.com/kill-antonieto/pelota/raw/main/images/Screenshot_6.png');
+  background-size: cover;
+}
+
