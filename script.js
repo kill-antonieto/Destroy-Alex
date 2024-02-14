@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const ball = document.getElementById("ball");
     const leftBar = document.getElementById("left-bar");
     const rightBar = document.getElementById("right-bar");
@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const leftBarRect = leftBar.getBoundingClientRect();
         const rightBarRect = rightBar.getBoundingClientRect();
 
-        ball.style.left = (ballRect.left + ballSpeedX) + "px";
-        ball.style.top = (ballRect.top + ballSpeedY) + "px";
+        ball.style.left = Math.round(ballRect.left + ballSpeedX) + "px";
+        ball.style.top = Math.round(ballRect.top + ballSpeedY) + "px";
 
         if (
             ballRect.left <= 0 ||
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ballRect.bottom >= leftBarRect.top
         ) {
             ballSpeedX = Math.abs(ballSpeedX);
-            ballSpeedY = (ballSpeedY > 0) ? 8 : -8; // Hacer que la pelota se mueva diagonalmente al rebotar
+            ballSpeedY = (ballSpeedY > 0) ? 8 : -8;
         }
 
         if (
@@ -57,12 +57,11 @@ document.addEventListener("DOMContentLoaded", function () {
             ballRect.bottom >= rightBarRect.top
         ) {
             ballSpeedX = -Math.abs(ballSpeedX);
-            ballSpeedY = (ballSpeedY > 0) ? 8 : -8; // Hacer que la pelota se mueva diagonalmente al rebotar
+            ballSpeedY = (ballSpeedY > 0) ? 8 : -8;
         }
     }
 
     function moveRightBar() {
-        // Controlar automáticamente la barra derecha (CPU)
         const speed = 4;
         if (ball.getBoundingClientRect().top > rightBar.getBoundingClientRect().top) {
             rightBarPosition += speed;
@@ -85,8 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     playButton.addEventListener("click", startGame);
 
-    document.addEventListener("keydown", function (event) {
-        // Controlar la barra izquierda con las teclas W y S
+    document.addEventListener("keydown", function(event) {
         switch (event.key) {
             case "w":
                 leftBarPosition -= 15;
