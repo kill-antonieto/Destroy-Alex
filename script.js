@@ -70,12 +70,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showMessage(message, link) {
     // Mostrar mensaje en el centro
-    titleContainer.innerHTML = `<a href="${link}" target="_blank">${message}</a>`;
-    titleContainer.style.display = "block";
+    titleContainer.innerHTML = `<div class="message"><a href="${link}" target="_blank">${message}</a></div>`;
+    titleContainer.style.display = "flex";
   }
 
   function moveRightBar() {
-    const speed = 4;
+    const speed = 8; // Ajusta la velocidad según sea necesario
     if (ball.getBoundingClientRect().top > rightBar.getBoundingClientRect().top) {
       rightBarPosition += speed;
     } else {
