@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const playButton = document.getElementById("play-button");
     const titleContainer = document.getElementById("title-container");
 
-    let ballSpeedX = 8;
-    let ballSpeedY = 8;
+    let ballSpeedX = 10; // Ajustar la velocidad de la pelota
+    let ballSpeedY = 10; // Ajustar la velocidad de la pelota
 
     let leftBarPosition = 50;
     let rightBarPosition = 50;
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ballRect.bottom >= leftBarRect.top
         ) {
             ballSpeedX = Math.abs(ballSpeedX);
-            ballSpeedY = (Math.random() > 0.5) ? 0 : 640; // Rebote aleatorio en el eje Y
+            ballSpeedY = getRandomInt(0, 640); // Rebote aleatorio en el eje Y dentro del rango [0, 640]
         }
 
         if (
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ballRect.bottom >= rightBarRect.top
         ) {
             ballSpeedX = -Math.abs(ballSpeedX);
-            ballSpeedY = (Math.random() > 0.5) ? 0 : 640; // Rebote aleatorio en el eje Y
+            ballSpeedY = getRandomInt(0, 640); // Rebote aleatorio en el eje Y dentro del rango [0, 640]
         }
     }
 
@@ -109,5 +109,10 @@ document.addEventListener("DOMContentLoaded", function() {
         updateBall();
         moveRightBar();
         updateBars();
+    }
+
+    // Función auxiliar para obtener un número entero aleatorio en un rango dado
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 });
