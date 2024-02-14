@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function moveRightBar() {
-    const speed = 8; // Ajusta la velocidad según sea necesario
+    const speed = 13; // Ajusta la velocidad según sea necesario
     if (ball.getBoundingClientRect().top > rightBar.getBoundingClientRect().top) {
       rightBarPosition += speed;
     } else {
