@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ballRect.bottom >= leftBarRect.top
         ) {
             ballSpeedX = Math.abs(ballSpeedX);
-            ballSpeedY = getRandomInt(0, window.innerHeight - ball.clientHeight); // Rebote aleatorio en el eje Y dentro del rango [0, altura de la ventana - altura de la pelota]
+            ballSpeedY = getRandomDirection(); // Cambio de dirección aleatorio en el eje Y
         }
 
         if (
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ballRect.bottom >= rightBarRect.top
         ) {
             ballSpeedX = -Math.abs(ballSpeedX);
-            ballSpeedY = getRandomInt(0, window.innerHeight - ball.clientHeight); // Rebote aleatorio en el eje Y dentro del rango [0, altura de la ventana - altura de la pelota]
+            ballSpeedY = getRandomDirection(); // Cambio de dirección aleatorio en el eje Y
         }
     }
 
@@ -111,8 +111,8 @@ document.addEventListener("DOMContentLoaded", function() {
         updateBars();
     }
 
-    // Función auxiliar para obtener un número entero aleatorio en un rango dado
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+    // Función auxiliar para obtener una dirección aleatoria en el eje Y
+    function getRandomDirection() {
+        return (Math.random() > 0.5) ? 10 : -10;
     }
 });
