@@ -28,11 +28,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (
             ballRect.left <= 0 ||
-            ballRect.right >= window.innerWidth ||
+            ballRect.right >= window.innerWidth
+        ) {
+            ballSpeedX = -ballSpeedX;
+        }
+
+        if (
             ballRect.top <= 0 ||
             ballRect.bottom >= window.innerHeight
         ) {
-            ballSpeedX = -ballSpeedX;
             ballSpeedY = -ballSpeedY;
         }
 
