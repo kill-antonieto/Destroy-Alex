@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const playButton = document.getElementById("play-button");
   const titleContainer = document.getElementById("title-container");
 
-  let ballSpeedX = 5;
-  let ballSpeedY = 5;
+  let ballSpeedX = 9;
+  let ballSpeedY = 9;
 
   let leftBarPosition = 50;
   let rightBarPosition = 50;
