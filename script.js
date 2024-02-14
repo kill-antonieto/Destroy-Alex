@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const leftBar = document.getElementById("left-bar");
     const rightBar = document.getElementById("right-bar");
     const playButton = document.getElementById("play-button");
+    const titleContainer = document.getElementById("title-container");
 
     let ballSpeedX = 5; // Velocidad inicial de la pelota en el eje X
     let ballSpeedY = 5; // Velocidad inicial de la pelota en el eje Y
@@ -82,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("Juego iniciado");
             gameStarted = true;
             playButton.style.display = "none"; // Ocultar el botón de "JUGAR"
-            document.getElementById("title-container").style.display = "none"; // Ocultar el contenedor de la imagen y el texto
+            titleContainer.style.display = "none"; // Ocultar el contenedor de la imagen y el texto
             // Agrega aquí la lógica adicional del juego, como el movimiento de la pelota y las colisiones.
             setInterval(updateGame, 20); // Actualiza cada 20 milisegundos (ajusta según tus necesidades)
         }
