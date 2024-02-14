@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ballRect.bottom >= leftBarRect.top
         ) {
             ballSpeedX = Math.abs(ballSpeedX);
-            ballSpeedY = (Math.random() > 0.5) ? -8 : 8; // Rebote aleatorio en el eje Y
+            ballSpeedY = (Math.random() > 0.5) ? 0 : 640; // Rebote aleatorio en el eje Y
         }
 
         if (
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ballRect.bottom >= rightBarRect.top
         ) {
             ballSpeedX = -Math.abs(ballSpeedX);
-            ballSpeedY = (Math.random() > 0.5) ? -8 : 8; // Rebote aleatorio en el eje Y
+            ballSpeedY = (Math.random() > 0.5) ? 0 : 640; // Rebote aleatorio en el eje Y
         }
     }
 
