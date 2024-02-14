@@ -14,6 +14,8 @@ body {
 #game-container {
     position: relative;
     text-align: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 #title-container {
@@ -21,8 +23,8 @@ body {
 }
 
 #title-image {
-    width: 200px; /* Ajusta el tamaño según tus necesidades */
-    height: 200px; /* Ajusta el tamaño según tus necesidades */
+    width: 200px;
+    height: 200px;
 }
 
 #game-title {
@@ -43,13 +45,17 @@ body {
 #left-bar, #right-bar {
     width: 20px;
     height: 100px;
-    background-color: blue; /* Barra izquierda azul */
-    z-index: 1; /* Asegura que las barras estén delante de la pelota */
+    background-color: blue;
+    z-index: 1;
+}
+
+#left-bar {
+    left: 0;
 }
 
 #right-bar {
     right: 0;
-    background-color: red; /* Barra derecha roja */
+    background-color: red;
 }
 
 #ball {
