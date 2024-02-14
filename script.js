@@ -81,4 +81,36 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!gameStarted) {
             gameStarted = true;
             playButton.style.display = "none"; // Ocultar el botón de "JUGAR"
-            // Agrega aquí la lógica adicional del juego, como el movimiento de la pelota y las colisiones
+            // Agrega aquí la lógica adicional del juego, como el movimiento de la pelota y las colisiones.
+            setInterval(updateGame, 20); // Actualiza cada 20 milisegundos (ajusta según tus necesidades)
+        }
+    }
+
+    // Evento de clic en el botón de "JUGAR"
+    playButton.addEventListener("click", startGame);
+
+    // Evento de teclado para el movimiento de la barra izquierda
+    document.addEventListener("keydown", function(event) {
+        switch (event.key) {
+            case "w":
+                leftBarPosition -= 10;
+                break;
+            case "s":
+                leftBarPosition += 10;
+                break;
+        }
+
+        // Asegurarse de que la barra izquierda no salga del área de juego
+        leftBarPosition = Math.max(0, Math.min(window.innerHeight - leftBar.clientHeight, leftBarPosition));
+
+        // Actualizar la posición de las barras en la interfaz
+        updateBars();
+    });
+
+    // Función para actualizar el juego (lógica adicional del juego)
+    function updateGame() {
+        updateBall();
+        moveRightBar(); // Agrega el movimiento automático de la barra derecha
+        updateBars();
+    }
+});
