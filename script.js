@@ -33,11 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (ballRect.right >= window.innerWidth) {
       // Detener la pelota y mostrar mensaje
       stopBall();
-      showMessage("FELICIDADES, ALEX HA MUERTO!!!", "https://github.com/kill-antonieto/pelota/blob/main/images/alexmuerto.png");
+      showMessage("FELICIDADES, ALEX HA MUERTO!!!");
     }
 
-    if (ballRect.top <= 0 || ballRect.bottom >= window.innerHeight) {
-      ballSpeedY = -ballSpeedY;
+    if (ballRect.top <= 0) {
+      ballSpeedY = Math.abs(ballSpeedY); // Cambiar la dirección cuando toque arriba
+    } else if (ballRect.bottom >= window.innerHeight) {
+      ballSpeedY = -Math.abs(ballSpeedY); // Cambiar la dirección cuando toque abajo
     }
 
     if (
