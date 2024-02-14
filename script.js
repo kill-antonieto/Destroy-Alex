@@ -62,47 +62,23 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // Función para que la barra derecha siga a la pelota
+    function moveRightBar() {
+        // Puedes ajustar la velocidad de seguimiento según tus necesidades
+        const speed = 2;
+        if (ball.getBoundingClientRect().top > rightBar.getBoundingClientRect().top) {
+            rightBarPosition += speed;
+        } else {
+            rightBarPosition -= speed;
+        }
+
+        // Asegurarse de que la barra no salga del área de juego
+        rightBarPosition = Math.max(0, Math.min(window.innerHeight - rightBar.clientHeight, rightBarPosition));
+    }
+
     // Función para comenzar el juego
     function startGame() {
         if (!gameStarted) {
             gameStarted = true;
             playButton.style.display = "none"; // Ocultar el botón de "JUGAR"
-            // Agrega aquí la lógica adicional del juego, como el movimiento de la pelota y las colisiones.
-            setInterval(updateGame, 20); // Actualiza cada 20 milisegundos (ajusta según tus necesidades)
-        }
-    }
-
-    // Evento de clic en el botón de "JUGAR"
-    playButton.addEventListener("click", startGame);
-
-    // Evento de teclado para el movimiento de las barras
-    document.addEventListener("keydown", function(event) {
-        switch (event.key) {
-            case "w":
-                leftBarPosition -= 10;
-                break;
-            case "s":
-                leftBarPosition += 10;
-                break;
-            case "ArrowUp":
-                rightBarPosition -= 10;
-                break;
-            case "ArrowDown":
-                rightBarPosition += 10;
-                break;
-        }
-
-        // Asegurarse de que las barras no salgan del área de juego
-        leftBarPosition = Math.max(0, Math.min(window.innerHeight - leftBar.clientHeight, leftBarPosition));
-        rightBarPosition = Math.max(0, Math.min(window.innerHeight - rightBar.clientHeight, rightBarPosition));
-
-        // Actualizar la posición de las barras en la interfaz
-        updateBars();
-    });
-
-    // Función para actualizar el juego (lógica adicional del juego)
-    function updateGame() {
-        updateBall();
-        updateBars();
-    }
-});
+            // Agrega aquí la lógica adicional del juego, como el movimiento de la pelota y las colisiones
