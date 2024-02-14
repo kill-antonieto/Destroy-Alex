@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const ball = document.getElementById("ball");
     const leftBar = document.getElementById("left-bar");
     const rightBar = document.getElementById("right-bar");
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     playButton.addEventListener("click", startGame);
 
-    document.addEventListener("keydown", function(event) {
+    document.addEventListener("keydown", function (event) {
         // Controlar la barra izquierda con las teclas W y S
         switch (event.key) {
             case "w":
