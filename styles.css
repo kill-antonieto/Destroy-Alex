@@ -1,6 +1,8 @@
 body {
     margin: 0;
     overflow: hidden;
+    background-color: black;
+    color: white;
 }
 
 #game-container {
@@ -12,11 +14,26 @@ body {
 }
 
 #left-bar, #right-bar {
-    width: 20px; /* ajusta el tamaño según tus necesidades */
-    height: 100px; /* ajusta el tamaño según tus necesidades */
+    width: 20px;
+    height: 100px;
+    background-color: blue; /* Barra izquierda azul */
+}
+
+#right-bar {
+    right: 0;
+    background-color: red; /* Barra derecha roja */
 }
 
 #ball {
-    width: 50px; /* ajusta el tamaño según tus necesidades */
-    height: 50px; /* ajusta el tamaño según tus necesidades */
+    width: 50px;
+    height: 50px;
+}
+
+button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
 }
