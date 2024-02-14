@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (ballRect.left <= 0) {
       // Detener la pelota y mostrar mensaje
       stopBall();
-      showMessage("FALLASTE, ALEX SIGUE VIVO", "https://github.com/kill-antonieto/pelota/blob/main/images/alexvivo.png");
+      showMessage("FALLASTE, ALEX SIGUE VIVO");
     } else if (ballRect.right >= window.innerWidth) {
       // Detener la pelota y mostrar mensaje
       stopBall();
