@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const playButton = document.getElementById("play-button");
   const titleContainer = document.getElementById("title-container");
 
-  let ballSpeedX = 13;
-  let ballSpeedY = 13;
+  let ballSpeedX = 7;
+  let ballSpeedY = 7;
 
   let leftBarPosition = 50;
   let rightBarPosition = 50;
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function moveRightBar() {
-    const speed = 13; // Ajusta la velocidad según sea necesario
+    const speed = 8; // Ajusta la velocidad según sea necesario
     if (ball.getBoundingClientRect().top > rightBar.getBoundingClientRect().top) {
       rightBarPosition += speed;
     } else {
