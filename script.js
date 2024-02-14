@@ -26,8 +26,14 @@ document.addEventListener("DOMContentLoaded", function () {
     ball.style.left = Math.round(ballRect.left + ballSpeedX) + "px";
     ball.style.top = Math.round(ballRect.top + ballSpeedY) + "px";
 
-    if (ballRect.left <= 0 || ballRect.right >= window.innerWidth) {
-      ballSpeedX = -ballSpeedX;
+    if (ballRect.left <= 0) {
+      // Detener la pelota y mostrar mensaje
+      stopBall();
+      showMessage("FALLASTE, ALEX SIGUE VIVO", "https://github.com/kill-antonieto/pelota/blob/main/images/alexvivo.png");
+    } else if (ballRect.right >= window.innerWidth) {
+      // Detener la pelota y mostrar mensaje
+      stopBall();
+      showMessage("FELICIDADES, ALEX HA MUERTO!!!", "https://github.com/kill-antonieto/pelota/blob/main/images/alexmuerto.png");
     }
 
     if (ballRect.top <= 0 || ballRect.bottom >= window.innerHeight) {
@@ -53,6 +59,17 @@ document.addEventListener("DOMContentLoaded", function () {
       ballSpeedX = -Math.abs(ballSpeedX);
       ballSpeedY = getRandomDirection(); // Cambio de dirección aleatorio en el eje Y
     }
+  }
+
+  function stopBall() {
+    ballSpeedX = 0;
+    ballSpeedY = 0;
+  }
+
+  function showMessage(message, link) {
+    // Mostrar mensaje en el centro
+    titleContainer.innerHTML = `<a href="${link}" target="_blank">${message}</a>`;
+    titleContainer.style.display = "block";
   }
 
   function moveRightBar() {
