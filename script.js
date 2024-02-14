@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const leftBarRect = leftBar.getBoundingClientRect();
         const rightBarRect = rightBar.getBoundingClientRect();
 
-        ball.style.left = Math.round(ballRect.left + ballSpeedX) + "px";
-        ball.style.top = Math.round(ballRect.top + ballSpeedY) + "px";
+        ball.style.left = Math.round(ballRect.left + Math.round(ballSpeedX)) + "px";
+        ball.style.top = Math.round(ballRect.top + Math.round(ballSpeedY)) + "px";
 
         if (
             ballRect.left <= 0 ||
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ballRect.bottom >= leftBarRect.top
         ) {
             ballSpeedX = Math.abs(ballSpeedX);
-            ballSpeedY = (ballSpeedY > 0) ? 8 : -8;
+            ballSpeedY = (Math.random() > 0.5) ? 8 : -8; // Rebote aleatorio
         }
 
         if (
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ballRect.bottom >= rightBarRect.top
         ) {
             ballSpeedX = -Math.abs(ballSpeedX);
-            ballSpeedY = (ballSpeedY > 0) ? 8 : -8;
+            ballSpeedY = (Math.random() > 0.5) ? 8 : -8; // Rebote aleatorio
         }
     }
 
@@ -83,6 +83,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     playButton.addEventListener("click", startGame);
+
+    document.addEventListener("mousemove", function(event) {
+        // Mover la barra izquierda con el mouse
+        leftBarPosition = event.clientY - leftBar.clientHeight / 2;
+        leftBarPosition = Math.max(0, Math.min(window.innerHeight - leftBar.clientHeight, leftBarPosition));
+        updateBars();
+    });
 
     document.addEventListener("keydown", function(event) {
         switch (event.key) {
