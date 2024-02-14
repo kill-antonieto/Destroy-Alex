@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function moveRightBar() {
+        // Controlar automáticamente la barra derecha (CPU)
         const speed = 2;
         if (ball.getBoundingClientRect().top > rightBar.getBoundingClientRect().top) {
             rightBarPosition += speed;
@@ -79,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
     playButton.addEventListener("click", startGame);
 
     document.addEventListener("keydown", function(event) {
+        // Controlar la barra izquierda con las teclas W y S
         switch (event.key) {
             case "w":
                 leftBarPosition -= 10;
