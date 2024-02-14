@@ -44,6 +44,7 @@ body {
     width: 20px;
     height: 100px;
     background-color: blue; /* Barra izquierda azul */
+    z-index: 1; /* Asegura que las barras estén delante de la pelota */
 }
 
 #right-bar {
