@@ -29,11 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (ballRect.left <= 0) {
       // Detener la pelota y mostrar mensaje
       stopBall();
-      showMessage("FALLASTE, ALEX SIGUE VIVO");
+      showMessage("FALLASTE, HAMAD SIGUE VIVO");
     } else if (ballRect.right >= window.innerWidth) {
       // Detener la pelota y mostrar mensaje
       stopBall();
-      showMessage("FELICIDADES, ALEX HA MUERTO!!!");
+      showMessage("FELICIDADES, HAMAD HA MUERTO!!!");
     }
 
     if (ballRect.top <= 0) {
